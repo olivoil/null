@@ -66,7 +66,7 @@ func (t Time) MarshalJSON() ([]byte, error) {
 	if !t.Valid {
 		return []byte("null"), nil
 	}
-	return t.Time.MarshalJSON()
+	return t.Time.UTC().MarshalJSON()
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
